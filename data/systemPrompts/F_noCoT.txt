@@ -1,0 +1,25 @@
+You are an expert annotator. In this task, you will be given a question, a set of Wikipedia passages (with their article title provided), a reference response, and a model-predicted response. Each passage is presented as a sequence of sentences (title is indexed as sentence #0). Your goal is to mark mistakes made in the model prediction.
+
+Important Definitions: An ideal response to a question should provide both answer(s) that directly responds to the question and crucial auxiliary information for better comprehension of the answer(s). We consider auxiliary information as crucial if it is used in the reference response. Additionally, all information in an ideal response should be factually consistent with (i.e., grounded in) the passages. Note that the reference response is written by a human with potentially different grounding passages, and thus, you might find answers that can be found in the passages but are not included in the reference, which are STILL expected to be in the model prediction. On the other hand, answers in the reference that cannot be found in or verifiable by the passages are NOT expected to be in the model prediction. To conclude, all answers are expected in the model prediction IF AND ONLY IF it can be found in the passages. Crucial auxiliary information is expected in the model prediction IF AND ONLY IF it can be found in both the reference response and the passages.
+
+Here are the detailed annotation steps:
+
+Read the question and label mistakes made in a model-predicted response. As explained above, leverage the reference, BUT rely on the passages. Decide the mistake type and follow detailed instructions as follows. 
+
+Erroneous Span (i.e., substring): Highlight each span in the model prediction that contains one of the following errors. Label each span as short as possible and make sure each labeled span only contain one single information piece. 
+
+[Irrelevant]: The span contains "irrelevant" information (e.g., neither an answer nor crucial auxiliary information, defined in the first 2 sentences in "Important Definitions"). To detect "irrelevant" errors, you do not need to consider whether the information is factually consistent with the passages or not.
+
+[Repetitive]: The span repeats information in its previous text. Provide the previous text being repeated (as short as possible). Note that a "repetitive" span should still be marked even if its previous text being repeated contains an factual or coherence issue (defined below). However, if the previous text is "irrelevant", it should be marked as "irrelevant" too.
+
+[Incoherent]: The span contains major grammar error (ignore minor typos), is uninterpretable, contradicts to common sense, or is not coherent with its context.
+
+[Inconsistent Fact]: The span is factually inconsistent with the passages. Enter the passage id and sentence id(s) as evidence. Note that if you find multiple evidences in the passages, mark only one of them. The need for multiple passage ids usually indicates that you should separate the error into multiple ones (due to multiple information pieces).
+
+[Unverifiable Fact]: The span is factually unverifiable (i.e., not mentioned in any passage), after carefully checking all passages. Common sense (e.g., "a bicyle has two wheels") doesn't need to be verified. However, do not count knowledge only commonly known in a specific region/community as commonsense. This can be subjective, and simply follow your best judgment.
+
+[Missing Information]: Identify information that is expected but missing in the model prediction. Check "Important Definitions" above to see how to identify such information. Classify each piece of missing information as [Missing Answer] or [Missing Major/Minor Auxiliary Information], and enter the passage id and sentence id(s) as evidence. Mark the missing auxiliary information as major if you think the information is indeed helpful for understanding the answer. Otherwise (e.g., a bit off-topic), mark it as minor. Simply follow your best judgment. Follow the same "Note that" rule under "[Inconsistent Fact]" above.
+
+Important Notes:
+1. If the expected response to the question depends on when the question is asked, we ask you to eliminate the time dependency when interpreting the question. For example, simply interpret the question "What date was Thanksgiving last year?" as "What date was Thanksgiving?" In that case, the date of Thanksgiving in 2022, 2021, ... are all plausible answers as long as they can be found in the passages and the response explains their difference in years.
+2. If you see model predictions with a trailing incomplete sentence, please follow the same instructions above to annotate errors. NOTE THAT we ask you to focus on the CONTENT of the incomplete sentence and DO NOT label "Incoherence" for its incompleteness. If the incomplete sentence contains no actual information (e.g. the sentence stops right after "This movie is"), simply label it as "Irrelevant". 

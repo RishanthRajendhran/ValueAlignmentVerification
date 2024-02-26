@@ -1,0 +1,69 @@
+You are an expert annotator. In this task, you will be given a question, a set of Wikipedia passages (with their article title provided), a reference response, and a model-predicted response. Each passage is presented as a sequence of sentences (title is indexed as sentence #0). Your goal is to mark mistakes made in the model prediction.
+
+Important Definitions: An ideal response to a question should provide both answer(s) that directly responds to the question and crucial auxiliary information for better comprehension of the answer(s). We consider auxiliary information as crucial if it is used in the reference response. Additionally, all information in an ideal response should be factually consistent with (i.e., grounded in) the passages. Note that the reference response is written by a human with potentially different grounding passages, and thus, you might find answers that can be found in the passages but are not included in the reference, which are STILL expected to be in the model prediction. On the other hand, answers in the reference that cannot be found in or verifiable by the passages are NOT expected to be in the model prediction. To conclude, all answers are expected in the model prediction IF AND ONLY IF it can be found in the passages. Crucial auxiliary information is expected in the model prediction IF AND ONLY IF it can be found in both the reference response and the passages.
+
+Here are the detailed annotation steps:
+
+Read the question and label mistakes made in a model-predicted response. As explained above, leverage the reference, BUT rely on the passages. Decide the mistake type and follow detailed instructions as follows.
+
+Erroneous Span (i.e., substring): Highlight each span in the model prediction that contains one of the following errors. Label each span as short as possible and make sure each labeled span only contain one single information piece.
+
+[Missing Information]: Identify information that is expected but missing in the model prediction.  Classify each piece of missing information as [Missing Answer] or [Missing Major/Minor Auxiliary Information], and enter the passage id and sentence id(s) as evidence. Mark the missing auxiliary information as major if you think the information is indeed helpful for understanding the answer. Otherwise (e.g., a bit off-topic), mark it as minor. Simply follow your best judgment. 
+
+Example:
+######
+Passage 1: Title (S0) - Jeepers Creepers 3
+
+S1. During an interview for the Edmond Sun, Justin Hall specifically revealed that the film would be released on September 4, 2017, but nothing was confirmed by Salva or the studio.
+S2. On August 16, 2017, the AMC Theatres website stated 'that "Jeepers Creepers 3" would open on September 26, 2017.
+S3. On August 29, 2017, selected theaters began selling tickets along with the official poster, revealing that the film would be on display for only one night.
+S4. Fathom Events then anhounced that the film's premiere would also feature never-before-seen bonus pictures and an interview with Breck, who plays the Creeper in all three franchise films.
+S5. A second showing in theaters on October 4, 2017 was later added.
+S6. Fandango updated the brief film synopsis shortly after,
+"this Fall, the Creeper returns.
+S7. See the next film in the iconio horror franchise when "Jeepers Creepers 3" returns for a special encore event in movie theaters nationwide for only one night on Wednesday, October 4." S8. Other participating theaters included Marcus Theaters and Galaxy Theaters.
+S9. After the theatrical showings, the film had its television premiere on the Syfy network on October 28, 2017.
+S10. The channel aired an encore showing on October 29.
+
+Input Question:
+When do the movie jeepers creepers come out?
+
+Reference response:
+Jeepers Creepers was theatrically released by United Artists and Metro-Goldwyn-Mayer on August 31, 2001. Two sequels to the film have also been released. Jeepers Creepers 2 was released on August 29, 2003, and Jeepers Creepers 3 was released on September 26, 2017.
+
+Model Prediction:
+The 2001 film Jeepers Creepers came out on August 31, 2001. It was met with mixed reviews from critics, but was a commercial success, grossing $59.37 billion against a $10 million budget. Jeepers Creepers 2 was released on August 29, 2003. The film came out in the UK on September 4, 2017 and in the US on September 26, 2017. Jeepers Creepers 3 was released in 2017. A fourth film.
+
+Mark missing information in the model prediction by listing out sentence numbers in the above passage containing the missing information and then provide an explanation.
+
+Missing Info:
+None
+
+Explanation:
+The model prediction is not missing any required information from this passage. 
+
+######
+Passage 2: Title (S0) - Jeepers Creepers (2001 film)
+S1. The film was theatrically released by United Artists and Metro-Goldwyn-Mayer on August 31, 2001.
+S2. It was met with mixed reviews from critics, but was a commercial success, grossing $59.37 million against a $10 million budget.
+S3. Two sequels have been released: Jeepers Creepers 2 2003) and Jeepers Creepers 3 (2017).
+S4. A fourth film, Jeepers Creepers: Reborn, is scheduled to be released in 2021.
+
+Input Question:
+When do the movie jeepers creepers come out?
+
+Reference response:
+Jeepers Creepers was theatrically released by United Artists and Metro-Goldwyn-Mayer on August 31, 2001. Two sequels to the film have also been released. Jeepers Creepers 2 was released on August 29, 2003, and Jeepers Creepers 3 was released on September 26, 2017.
+
+Model Prediction:
+The 2001 film Jeepers Creepers came out on August 31, 2001. It was met with mixed reviews from critics, but was a commercial success, grossing $59.37 billion against a $10 million budget. Jeepers Creepers 2 was released on August 29, 2003. The film came out in the UK on September 4, 2017 and in the US on September 26, 2017. Jeepers Creepers 3 was released in 2017. A fourth film.
+
+Mark missing information in the model prediction by listing out sentence numbers in the above passage containing the missing information and then provide an explanation.
+
+Missing Info:
+1. Passage 2, sentence 4
+2. Passage 2, sentence 1
+
+Explanation:
+1. Passage 1 and sentence 4 contains a missing answer for the fourth film. Even if the answer is also missing in the reference, it should still be labeled.
+2. The reference contains auxiliary information "released by United Artists and Metro-Goldwyn-Mayer" that can be found in passage 2 and sentence 1. It does not seem super critical for explaining the answer, thus it can be labeled as "Missing Minor Auxiliary Info". However, as this can be subjective, you might label it as "Major" if you think the information is crucial.

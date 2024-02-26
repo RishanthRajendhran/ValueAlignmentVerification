@@ -1,0 +1,84 @@
+Passages:
+Passage 1: Title (S0) - Masters of the Universe
+S1. Masters of the Universe  Masters of the Universe (commonly abbreviated MOTU and sometimes referred to as "He-Man", after the lead hero) is a media franchise created by Mattel.
+S2. The main premise revolves around the conflict between the heroic He-Man (the most powerful man in the universe and the secret identity of Prince Adam), against the evil sorcerer Skeletor on the planet Eternia, with a vast line-up of supporting characters in a hybrid setting of medieval sword and sorcery and sci-fi technology.
+S3. A spin-off series, with a similar premise, "," features He-Man's sister She-Ra and her struggle against the Evil Horde on the planet Etheria.
+S4. Since its initial launch, the franchise has spawned a variety of products, including multiple lines of action figures, five animated television series, several comic series, video games, a daily newspaper comic strip, and two feature films (one animated, one live action).
+S5. He-Man would make his debut in 1982 with Mattel's release of the original 'Masters of the Universe' 5.5 inch action figure toyline.
+S6. The minicomics that accompanied the toys through the duration of the line would begin the MOTU mythos, followed soon by several children's books and issues of DC Comics.
+
+Passage 2: Title (S0) - Masters of the Universe
+S1. On 12 May 2009, it was announced that the scripting duties had been handed to newcomer Evan Daugherty, with John Stevenson still attached to direct.
+S2. In September 2009, Sony took over the rights from Warner Bros. to produce the "Masters of the Universe" live-action film after Mattel and Silver couldn't agree on creative direction for the film.
+S3. Sony and Escape Artists' Todd Black, Jason Blumenthal and Steve Tisch were now developing the project from scratch for Columbia.
+S4. In April 2010, Sony hired screenwriters Mike Finch and Alex Litvak to draft a new script.
+S5. Deadline reported that Jon M. Chu was in talks to direct the film.
+S6. Original He-Man actor Dolph Lundgren did an interview with IGN about possibly appearing in the film as King Randor.
+S7. On October 12, 2012, Richard Wenk was hired to rewrite the script for the film.
+S8. On March 28, 2013, Chu said that the film was still early in its development and that it would not be campy, but rather a dramatic origin story.
+S9. On October 7, 2013, "The Hollywood Reporter" reported that Terry Rossio would write the film; Todd Black, Jason Blumenthal and Steve Tisch were assigned to produce it.
+S10. The film would be set on Eternia.
+S11. The site also reported that Chu would not direct the film.
+
+Passage 3: Title (S0) - Masters of the Universe (film)
+S1. A new "He-Man" film directed by John Woo was reportedly being developed in 2007, but despite many rumors circulating the Internet regarding the film's production status and casting, the project was never officially green-lit.
+S2. The film rights to He-Man have reportedly since reverted to Mattel.
+S3. In September 2009, Sony took over the rights from Warner Bros. to produce the live action adaptation after Mattel and producer Joel Silver, who was previously involved with a potential film, couldn't agree on creative direction for the film.
+S4. Sony and Escape Artists' Todd Black, Jason Blumenthal, and Steve Tisch will now start developing the project from scratch for Columbia Pictures.
+S5. In April 2010, Sony hired screenwriters Mike Finch and Alex Litvak to draft a new script.
+S6. Warner announced that John Stevenson, director of "Kung Fu Panda" will direct the upcoming feature.
+S7. On May 12, 2009, it was announced that the scripting duties had been handed to Evan Daugherty, with Stevenson still attached to direct.
+S8. In late 2012, "Deadline" reported that Jon M. Chu was in talks to direct the film.
+S9. Original He-Man actor Lundgren did an interview with IGN about a possible role in the film as King Randor.
+S10. October 12, 2012, Richard Wenk is hired to rewrite the script for the film.
+
+Input Question:
+Who owns the rights to masters of the universe?
+
+Reference response:
+Masters of the Universe is a sword and sorcery-themed media franchise created and owned by Mattel. In 2009, Sony took over the rights from Warner Bros. Entertainment Inc. to produce the reboot of "Masters of the Universe", a live-action film. Warner Bros., the WB, lost the project over creative direction with Mattel and the Sony Corporation hired screenwriters Mike Finch and Alex Litvak to draft a new script.
+
+Model Prediction:
+Masters of the Universe is a media franchise created by Mattel. From 1982 to 2009, Mattel owned the rights to the toys and games Master of the Universe. From September 2009 to September 2009, Sony owned the rights to produce the live action adaptation of Master of the Universe. Sony and Escape Artists started developing the project from scratch for Columbia Pictures. In September 2009, Sony took over the rights from Warner Bros. to produce the film after Mattel and producer Joel Silver, who was previously involved with a potential film, couldn't agree on creative direction for the film. Sony and Escape Artists started developing the project from scratch for Columbia Pictures.
+######
+Mark the irrelevant, incoherent and repetitive spans in the model prediction by enclosing them within square brackets ([]) and then provide an explanation.
+
+Annotated Model Prediction:
+Masters of the Universe is a media franchise created by Mattel. From 1982 to 2009, Mattel owned the rights to the toys and games Master of the Universe. From September 2009 [to September 2009,] Sony owned the rights to produce the live action adaptation of Master of the Universe.[Sony and Escape Artists started developing the project from scratch for Columbia Pictures.][In September 2009, Sony took over the rights] from Warner Bros.[to produce the film] after Mattel and producer Joel Silver,[who was previously involved with a potential film,] couldn't agree on creative direction for the film.[Sony and Escape Artists started developing the project from scratch for Columbia Pictures.]
+
+Explanation:
+1. The third sentence contains information that is either contradictory or incoherent. The lower and upper bounds of a range cannot be the same. 
+2. The fourth sentence in the model prediction is neither a direct answer nor crucial auxiliary information (i.e., not found in the reference).
+3. The fifth sentence contains information already expressed in the third sentence.
+4. The fifth sentence contains information that is neither a direct answer nor crucial auxiliary information (i.e., not found in the reference).
+5. The sixth sentence contains information already expressed in the fourth sentence.
+######
+Mark the spans in the model prediction that contain inconsistent or unverifiable facts by listing the sentences by their sentence numbers and then provide an explanation.
+
+Model Prediction Sentences:
+S1. Masters of the Universe is a media franchise created by Mattel.
+S2. From 1982 to 2009, Mattel owned the rights to the toys and games Master of the Universe.
+S3. From September 2009 to September 2009, Sony owned the rights to produce the live action adaptation of Master of the Universe.
+S4. Sony and Escape Artists started developing the project from scratch for Columbia Pictures.
+S5. In September 2009, Sony took over the rights from Warner Bros. to produce the film after Mattel and producer Joel Silver, who was previously involved with a potential film, couldn't agree on creative direction for the film.
+S6. Sony and Escape Artists started developing the project from scratch for Columbia Pictures.
+
+Inconsistent or Unverifiable Sentences:
+1. S2
+
+Explanation:
+1. The provided passages only say that Sony bought rights to Master of the Universe from Warner Bros. in 2009. There is no information in the passage that can be used to verify this claim that Mattel owned the rights in this period.
+######
+Mark missing information in the model prediction by listing out the passage and sentence numbers followed by the label within square brackets containing the missing information and then provide an explanation.
+
+Missing Info:
+1. Passage 3, sentence 5 [Missing-Minor-Auxiliary]
+
+Explanation: 
+1. The reference contains auxiliary information "Sony Corporation hired screenwriters Mike Finch and Alex Litvak to draft a new script" that can be found in passage 3 and sentence 5. It does not seem super critical for explaining the answer, thus it can be labeled as "Missing Minor Auxiliary Information".
+######
+Now, write the corrected model prediction addressing all mistakes labeled above. 
+
+Corrected Model Prediction:
+Masters of the Universe is a media franchise created by Mattel.  In September 2009, Sony took over the rights from Warner Bros. to produce the the live action adaptation of "Masters of the Universe" after Mattel and producer Joel Silver, couldn\'t agree on creative direction for the film. Sony hired screenwriters Mike Finch and Alex Litvak to draft a new script.
+######
